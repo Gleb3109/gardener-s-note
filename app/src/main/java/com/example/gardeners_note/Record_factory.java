@@ -5,7 +5,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 
 public  class Record_factory {
@@ -20,6 +22,14 @@ public  class Record_factory {
     }
     public static void delate() {
 
+    }
+    public List<Calendar_record> getMonth(int month, int year){
+        List<Calendar_record> mDates = new ArrayList<Calendar_record>();
+        mDates.add(new Calendar_record(1,5,2005,""));
+        mDates.add(new Calendar_record(5,5,2005,""));
+        mDates.add(new Calendar_record(9,5,2005,""));
+       // mDates.add(new Calendar_record(11,4,2005,""));
+        return  mDates;
     }
     public  Calendar_record get(int day, int month, int year)  {
      //   conn.Conn();

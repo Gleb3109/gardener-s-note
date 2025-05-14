@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Calendar {
-
+/*
     class calendar_record {
         private int day;
         private int month;
@@ -53,5 +53,5 @@ public class Calendar {
 
         }
     }
-
+*/
 }
