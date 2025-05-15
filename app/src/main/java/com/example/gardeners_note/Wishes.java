@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,5 +35,21 @@ public class Wishes extends AppCompatActivity {
 
             }
         });
+        TableLayout prices = (TableLayout)findViewById(R.id.tableWish);
+        prices.setStretchAllColumns(true);
+        prices.bringToFront();
+        for(int i = 0; i < 3; i++){
+            TableRow tr =  new TableRow(this);
+            TextView c1 = new TextView(this);
+            c1.setText("№"+i);
+            TextView c2 = new TextView(this);
+            c2.setText("Мак"+i);
+            TextView c3 = new TextView(this);
+            c3.setText("красный цветок "+i);
+            tr.addView(c1);
+            tr.addView(c2);
+            tr.addView(c3);
+            prices.addView(tr);
+        }
     }
 }
