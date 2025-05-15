@@ -49,4 +49,12 @@
         app:layout_constraintTop_toBottomOf="@+id/kalendar"
         tools:ignore="MissingConstraints" />
 
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/custom_back" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

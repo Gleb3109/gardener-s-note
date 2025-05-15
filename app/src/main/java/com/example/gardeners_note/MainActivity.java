@@ -12,8 +12,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.gardeners_note.Calendar;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +36,33 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Calendar_activiti.class);
+                startActivity(intent);
+
+            }
+        });
+        Button button2 = findViewById(R.id.button3);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Lunar_calendar.class);
+                startActivity(intent);
+
+            }
+        });
+        Button button3 = findViewById(R.id.button4);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Wishes.class);
+                startActivity(intent);
+
+            }
+        });
+        Button button4 = findViewById(R.id.button5);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, OrnamentalGarden.class);
                 startActivity(intent);
 
             }
