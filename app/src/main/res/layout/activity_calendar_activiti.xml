@@ -6,6 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Calendar_activiti">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Добавить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <com.ak.KalendarView
         android:id="@+id/kalendar"
         android:layout_width="394dp"
@@ -20,31 +29,18 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingClass" />
 
-    <EditText
-        android:id="@+id/editTextTextPostalAddress"
-        android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:layout_marginTop="152dp"
-        android:ems="10"
-        android:inputType="textPostalAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kalendar" />
-
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="380dp"
-        android:layout_height="130dp"
+        android:layout_width="370dp"
+        android:layout_height="57dp"
         android:layout_marginStart="17dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="14dp"
-        android:layout_marginBottom="14dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPostalAddress"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kalendar"
         tools:ignore="MissingConstraints" />
@@ -56,5 +52,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/custom_back" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="115dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="3dp"
+        android:text="Календарь"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="327dp"
+        android:layout_height="103dp"
+        android:layout_marginBottom="164dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

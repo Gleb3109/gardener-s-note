@@ -32,8 +32,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="209dp"
-        android:layout_height="45dp"
+        android:layout_width="217dp"
+        android:layout_height="53dp"
         android:text="Календарь"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,8 +44,8 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="212dp"
-        android:layout_height="50dp"
+        android:layout_width="217dp"
+        android:layout_height="51dp"
         android:layout_marginTop="16dp"
         android:text="Лунный календарь"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,7 @@
         android:layout_width="217dp"
         android:layout_height="51dp"
         android:layout_marginTop="14dp"
-        android:text="Пожелания"
+        android:text="Желания"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />

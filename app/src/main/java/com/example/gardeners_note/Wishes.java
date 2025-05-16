@@ -35,17 +35,39 @@ public class Wishes extends AppCompatActivity {
 
             }
         });
+        ImageButton button2 = findViewById(R.id.imageButton5);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Wishes.this, Wishes_add.class);
+                startActivity(intent);
+
+            }
+        });
         TableLayout prices = (TableLayout)findViewById(R.id.tableWish);
         prices.setStretchAllColumns(true);
         prices.bringToFront();
         for(int i = 0; i < 3; i++){
             TableRow tr =  new TableRow(this);
             TextView c1 = new TextView(this);
-            c1.setText("№"+i);
+            c1.setText("");
             TextView c2 = new TextView(this);
-            c2.setText("Мак"+i);
+            c2.setText("");
             TextView c3 = new TextView(this);
-            c3.setText("красный цветок "+i);
+            c3.setText("");
+            tr.addView(c1);
+            tr.addView(c2);
+            tr.addView(c3);
+            prices.addView(tr);
+        }
+        for(int i = 0; i < 3; i++) {
+            TableRow tr = new TableRow(this);
+            TextView c1 = new TextView(this);
+            c1.setText("№" + i);
+            TextView c2 = new TextView(this);
+            c2.setText("Мак" + i);
+            TextView c3 = new TextView(this);
+            c3.setText("красный цветок " + i);
             tr.addView(c1);
             tr.addView(c2);
             tr.addView(c3);

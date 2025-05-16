@@ -28,6 +28,7 @@ public class Calendar_activiti extends AppCompatActivity {
     Record_factory mFactory;
     Calendar_record mRecord;
     TextView mTextView;
+    TextView mEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,7 @@ public class Calendar_activiti extends AppCompatActivity {
         setContentView(R.layout.activity_calendar_activiti);
         mKalendarView = findViewById(R.id.kalendar);
         mTextView= (TextView)findViewById(R.id.textView3);
+        mEditText=(TextView)findViewById(R.id.editTextTextMultiLine);
         mFactory=new Record_factory();
 
         List<ColoredDate> datesColors = new ArrayList<>();
@@ -66,6 +68,14 @@ public class Calendar_activiti extends AppCompatActivity {
 
             }
         });
+        Button button2 = findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = mEditText.getText().toString();
+            }
+        });
+
 
     }
 
