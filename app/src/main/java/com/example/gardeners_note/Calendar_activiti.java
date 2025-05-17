@@ -40,14 +40,14 @@ public class Calendar_activiti extends AppCompatActivity {
         mEditText=(TextView)findViewById(R.id.editTextTextMultiLine);
         mFactory=new Record_factory(this);
 
-        List<ColoredDate> datesColors = new ArrayList<>();
-      /*  List<Calendar_record> mDates =mFactory.getMonth(5,2005);
-        datesColors.add(new ColoredDate(new Date(), getResources().getColor(R.color.blue)));
+        ArrayList<ColoredDate> datesColors = new ArrayList<>();
+        ArrayList<Calendar_record> mDates =new ArrayList<>();
+        mDates =mFactory.getAll();
         //Заполним календарь тестовымиданными
         for(Calendar_record dt : mDates) {
-            datesColors.add(new ColoredDate(new Date((dt.getYear()-1900), (dt.getMonth()-1), dt.getDay()), getResources().getColor(R.color.blue)));
-        }*/
-      //  mKalendarView.setColoredDates(datesColors);
+            datesColors.add(new ColoredDate(new Date((dt.getYear()-1900), (dt.getMonth()-1), dt.getDay()), getResources().getColor(R.color.red)));
+        }
+       mKalendarView.setColoredDates(datesColors);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -80,6 +80,7 @@ public class Calendar_activiti extends AppCompatActivity {
                     mFactory.edit(cr);
                 }else{
                     mFactory.add(cr);
+                    datesColors.add(new ColoredDate(new Date((cr.getYear()-1900), (cr.getMonth()-1), cr.getDay()), getResources().getColor(R.color.red)));
                 }
             }
         });

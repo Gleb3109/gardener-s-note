@@ -2,7 +2,10 @@ package com.example.gardeners_note;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -14,8 +17,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Wishes extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class Wishes extends AppCompatActivity {
+    Wish_factory mFactory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,9 +49,10 @@ public class Wishes extends AppCompatActivity {
 
             }
         });
-        TableLayout prices = (TableLayout)findViewById(R.id.tableWish);
-        prices.setStretchAllColumns(true);
-        prices.bringToFront();
+        TableLayout wishes = (TableLayout)findViewById(R.id.tableWish);
+        wishes.setStretchAllColumns(true);
+        wishes.bringToFront();
+
         for(int i = 0; i < 3; i++){
             TableRow tr =  new TableRow(this);
             TextView c1 = new TextView(this);
@@ -55,23 +61,57 @@ public class Wishes extends AppCompatActivity {
             c2.setText("");
             TextView c3 = new TextView(this);
             c3.setText("");
+            TextView c4 = new TextView(this);
+            c4.setText("");
             tr.addView(c1);
             tr.addView(c2);
             tr.addView(c3);
-            prices.addView(tr);
+            tr.addView(c4);
+            wishes.addView(tr);
         }
-        for(int i = 0; i < 3; i++) {
-            TableRow tr = new TableRow(this);
+
+        mFactory=new Wish_factory(this);
+        ArrayList<Wish_record> mWishs= new ArrayList<>();
+        mWishs=mFactory.getAll();
+        int i=0;
+       for(Wish_record w : mWishs) {
+           Log.d("myTag", "Wish " + w.getId());
+           i++;
+           TableRow tr = new TableRow(this);
+           if (i==1) {
+               tr.setBackgroundResource(R.color.white);
+           } else {
+               i=0;
+               tr.setBackgroundResource(R.color.lightblue);
+           }
             TextView c1 = new TextView(this);
-            c1.setText("№" + i);
+            c1.setText(" " + w.getId());
             TextView c2 = new TextView(this);
-            c2.setText("Мак" + i);
+            c2.setText(w.getWish_name());
             TextView c3 = new TextView(this);
-            c3.setText("красный цветок " + i);
+            c3.setText(w.getWish_note());
+            c3.setMaxWidth(150);
+            tr.setGravity(Gravity.CENTER_VERTICAL);
             tr.addView(c1);
             tr.addView(c2);
             tr.addView(c3);
-            prices.addView(tr);
+            String btnid = "btn"+w.getId();
+           ImageButton btDel = new ImageButton(this);
+           btDel.setId(w.getId());
+           btDel.setImageResource(R.drawable.btn_dell);
+           btDel.setBackgroundResource(android.R.color.transparent);
+           btDel.setPadding(2, 2, 2, 2);
+           btDel.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   mFactory.delete(w.getId());
+                   wishes.removeView(tr);
+               }
+           });
+           tr.addView(btDel);
+            wishes.addView(tr);
         }
+
+
     }
 }

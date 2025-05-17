@@ -9,6 +9,11 @@ public class Wish_record {
         this.wish_name = wish_name;
         this.wish_note = wish_note;
     }
+    public Wish_record(int id, String wish_name, String wish_note) {
+        this.id=id;
+        this.wish_name = wish_name;
+        this.wish_note = wish_note;
+    }
     public Wish_record() {
     }
     public String getWish_name() {

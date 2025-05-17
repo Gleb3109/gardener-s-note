@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -52,14 +53,13 @@ public  class Record_factory {
                 String.valueOf(a_record.getYear())});
         db.close();
     }
-    public List<Calendar_record> getMonth(int month, int year){
-        List<Calendar_record> mDates = new ArrayList<Calendar_record>();
+    public ArrayList <Calendar_record> getAll(){
+        ArrayList<Calendar_record> mDates = new ArrayList<Calendar_record>();
         String[] projection = {"day", "month","year","record"};
         Database databaseHelper = new Database(mContext);
         SQLiteDatabase db = databaseHelper.getWritableDatabase();
-        Cursor cursor = db.query("calendar_record", projection, "month=? and year=?", new String[]{
-                String.valueOf(month),
-                String.valueOf(year)}, null, null, null);
+        Cursor cursor = db.query("calendar_record", projection, null,null, null, null, null);
+        Log.d("myTag","getAll " + cursor.getCount());
         while (cursor.moveToNext()) {
             int day = cursor.getInt(cursor.getColumnIndexOrThrow("day"));
             int mmonth = cursor.getInt(cursor.getColumnIndexOrThrow("month"));
