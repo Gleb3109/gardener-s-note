@@ -37,6 +37,7 @@ public class Calendar_activiti extends AppCompatActivity {
         setContentView(R.layout.activity_calendar_activiti);
         mKalendarView = findViewById(R.id.kalendar);
         mTextView= (TextView)findViewById(R.id.textView3);
+        mTextView.setText("");
         mEditText=(TextView)findViewById(R.id.editTextTextMultiLine);
         mFactory=new Record_factory(this);
 
@@ -81,6 +82,19 @@ public class Calendar_activiti extends AppCompatActivity {
                 }else{
                     mFactory.add(cr);
                     datesColors.add(new ColoredDate(new Date((cr.getYear()-1900), (cr.getMonth()-1), cr.getDay()), getResources().getColor(R.color.red)));
+                }
+            }
+        });
+        Button button7 = findViewById(R.id.button7);
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Date dt=mKalendarView.getSelectedDate();
+                Calendar_record cr= new Calendar_record(dt.getDate(),dt.getMonth()+1, dt.getYear()+1900,mEditText.getText().toString());
+                mTextView.setText("");
+                if (!mRecord.isEmpty){
+                    mFactory.delate(mRecord);
+                    datesColors.removeIf(element -> (Objects.equals(element.date, new Date((cr.getYear()-1900), (cr.getMonth()-1), cr.getDay()))));
                 }
             }
         });

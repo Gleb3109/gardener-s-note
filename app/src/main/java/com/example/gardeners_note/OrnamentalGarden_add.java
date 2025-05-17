@@ -11,32 +11,23 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class OrnamentalGarden extends AppCompatActivity {
+public class OrnamentalGarden_add extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_ornamental_garden);
+        setContentView(R.layout.activity_ornamental_garden_add);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        ImageButton button = findViewById(R.id.imageButton4);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(OrnamentalGarden.this, MainActivity.class);
-                startActivity(intent);
-
-            }
-        });
-        ImageButton button2 = findViewById(R.id.imageButton7);
+        ImageButton button2 = findViewById(R.id.imageButton8);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(OrnamentalGarden.this, OrnamentalGarden_add.class);
+                Intent intent = new Intent(OrnamentalGarden_add.this, OrnamentalGarden.class);
                 startActivity(intent);
             }
         });
