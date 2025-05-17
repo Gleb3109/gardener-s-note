@@ -40,10 +40,10 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="188dp"
+        android:layout_width="263dp"
         android:layout_height="96dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="44dp"
         android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,10 +51,10 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="186dp"
-        android:layout_height="76dp"
+        android:layout_width="264dp"
+        android:layout_height="89dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="40dp"
         android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,16 +77,32 @@
         android:layout_height="84dp"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="@+id/textView4"
-        app:srcCompat="@drawable/photo_5276016729706851916_m" />
+        app:srcCompat="@drawable/photo_5276016729706851909_m" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="363dp"
-        android:layout_height="333dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="1dp"
+        android:layout_width="285dp"
+        android:layout_height="261dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:srcCompat="@drawable/_98a570e_40ff_4796_bae9_da2575000685_m" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="131dp"
+        android:layout_height="99dp"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/textView5"
+        app:srcCompat="@drawable/photo_5276016729706851909_m" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="118dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="@+id/textView6"
+        app:srcCompat="@drawable/photo_5276016729706851912_m" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
