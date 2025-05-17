@@ -1,5 +1,10 @@
 package com.example.gardeners_note;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -11,30 +16,82 @@ import java.util.List;
 
 
 public  class Record_factory {
-    public Record_factory(){
-
+     Context mContext;
+    public Record_factory(Context aContext){
+        mContext=aContext;
     }
-    public static void add() {
-
+    public  void add(Calendar_record a_record) {
+        Database databaseHelper = new Database(mContext);
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("day", a_record.getDay());
+        cv.put("month", a_record.getMonth());
+        cv.put("year", a_record.getYear());
+        cv.put("record", a_record.getRecord());
+        long newRowId = db.insert("calendar_record", null, cv);
+        db.close();
     }
-    public static void edit() {
-
+    public  void edit(Calendar_record a_record) {
+        Database databaseHelper = new Database(mContext);
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("day", a_record.getDay());
+        cv.put("month", a_record.getMonth());
+        cv.put("year", a_record.getYear());
+        cv.put("record", a_record.getRecord());
+        long newRowId = db.update("calendar_record", cv, "day=? and  month=? and year=?", new String[]{String.valueOf(a_record.getDay()),
+                String.valueOf(a_record.getMonth()),
+                String.valueOf(a_record.getYear())});
+        db.close();
     }
-    public static void delate() {
-
+    public  void delate(Calendar_record a_record) {
+        Database databaseHelper = new Database(mContext);
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        long newRowId = db.delete("calendar_record",  "day=? and month=? and year=?", new String[]{String.valueOf(a_record.getDay()),
+                String.valueOf(a_record.getMonth()),
+                String.valueOf(a_record.getYear())});
+        db.close();
     }
     public List<Calendar_record> getMonth(int month, int year){
         List<Calendar_record> mDates = new ArrayList<Calendar_record>();
-        mDates.add(new Calendar_record(1,5,2005,""));
-        mDates.add(new Calendar_record(5,5,2005,""));
-        mDates.add(new Calendar_record(9,5,2005,""));
-       // mDates.add(new Calendar_record(11,4,2005,""));
+        String[] projection = {"day", "month","year","record"};
+        Database databaseHelper = new Database(mContext);
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        Cursor cursor = db.query("calendar_record", projection, "month=? and year=?", new String[]{
+                String.valueOf(month),
+                String.valueOf(year)}, null, null, null);
+        while (cursor.moveToNext()) {
+            int day = cursor.getInt(cursor.getColumnIndexOrThrow("day"));
+            int mmonth = cursor.getInt(cursor.getColumnIndexOrThrow("month"));
+            int yyear = cursor.getInt(cursor.getColumnIndexOrThrow("year"));
+            String record = cursor.getString(cursor.getColumnIndexOrThrow("record"));
+            Calendar_record cr=new Calendar_record(day, mmonth,yyear,record);
+            mDates.add(cr);
+        }
+        db.close();
         return  mDates;
     }
     public  Calendar_record get(int day, int month, int year)  {
-     //   conn.Conn();
-        //   conn.CloseDB();
-        return new Calendar_record(1, 5, 2025, "День труда");
+        Calendar_record cr=new Calendar_record();
+        String[] projection = {"day", "month","year","record"};
+        Database databaseHelper = new Database(mContext);
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        Cursor cursor = db.query("calendar_record", projection, "day=? and month=? and year=?", new String[]{
+                String.valueOf(day),
+                String.valueOf(month),
+                String.valueOf(year)}, null, null, null);
+        while (cursor.moveToNext()) {
+            int dday = cursor.getInt(cursor.getColumnIndexOrThrow("day"));
+            int mmonth = cursor.getInt(cursor.getColumnIndexOrThrow("month"));
+            int yyear = cursor.getInt(cursor.getColumnIndexOrThrow("year"));
+            String record = cursor.getString(cursor.getColumnIndexOrThrow("record"));
+            cr.setDay(dday);
+            cr.setMonth(mmonth);
+            cr.setYear(yyear);
+            cr.setRecord(record);
+        }
+        db.close();
+        return cr;
     }
     public static class db {
 
