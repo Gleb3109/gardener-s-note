@@ -16,6 +16,12 @@ public class OrnamentalGarden_record {
         this.ornamental_note = ornamental_note;
         this.ornamental_type = ornamental_type;
     }
+    public OrnamentalGarden_record(int id, String ornamental_name, String ornamental_note, int ornamental_type) {
+        this.id=id;
+        this.ornamental_name = ornamental_name;
+        this.ornamental_note = ornamental_note;
+        this.ornamental_type = GardenEnum.values()[ornamental_type];
+    }
     public OrnamentalGarden_record() {
     }
     public String getOrnamental_name() {

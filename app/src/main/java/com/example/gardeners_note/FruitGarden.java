@@ -18,13 +18,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 
-public class OrnamentalGarden extends AppCompatActivity {
-    Ornamental_factory mFactory;
+public class FruitGarden extends AppCompatActivity {
+    Fruit_factory mFactory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_ornamental_garden);
+        setContentView(R.layout.activity_fruit_garden);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -34,7 +34,7 @@ public class OrnamentalGarden extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(OrnamentalGarden.this, MainActivity.class);
+                Intent intent = new Intent(FruitGarden.this, MainActivity.class);
                 startActivity(intent);
 
             }
@@ -43,13 +43,13 @@ public class OrnamentalGarden extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(OrnamentalGarden.this, OrnamentalGarden_add.class);
+                Intent intent = new Intent(FruitGarden.this, FruitGarden_add.class);
                 startActivity(intent);
             }
         });
-        TableLayout ornament = (TableLayout)findViewById(R.id.tableOrnamentalGarden);
-        ornament.setStretchAllColumns(true);
-        ornament.bringToFront();
+        TableLayout fruit = (TableLayout)findViewById(R.id.tableFruitGarden);
+        fruit.setStretchAllColumns(true);
+        fruit.bringToFront();
         for(int i = 0; i < 3; i++){
             TableRow tr =  new TableRow(this);
             TextView c1 = new TextView(this);
@@ -64,14 +64,14 @@ public class OrnamentalGarden extends AppCompatActivity {
             tr.addView(c2);
             tr.addView(c3);
             tr.addView(c4);
-            ornament.addView(tr);
+            fruit.addView(tr);
         }
-        mFactory=new Ornamental_factory(this);
-        ArrayList<OrnamentalGarden_record> mOrnamental= new ArrayList<>();
-        mOrnamental=mFactory.getAll();
+        mFactory=new Fruit_factory(this);
+        ArrayList<FruitGarden_record> mFruit= new ArrayList<>();
+        mFruit = mFactory.getAll();
         int i=0;
-        for(OrnamentalGarden_record g : mOrnamental) {
-            Log.d("myTag", "OrnamentalGarden " + g.getId());
+        for(FruitGarden_record g : mFruit) {
+            Log.d("myTag", "FruitGarden " + g.getId());
             i++;
             TableRow tr = new TableRow(this);
             if (i==1) {
@@ -83,17 +83,20 @@ public class OrnamentalGarden extends AppCompatActivity {
             TextView c0 = new TextView(this);
             c0.setText(" " + g.getId());
             TextView c1 = new TextView(this);
-            c1.setText(g.getOrnamental_type().getTitle());
+            c1.setText(g.getFruit_type().getTitle());
             TextView c2 = new TextView(this);
-            c2.setText(g.getOrnamental_name());
+            c2.setText(g.getFruit_name());
             TextView c3 = new TextView(this);
-            c3.setText(g.getOrnamental_note());
+            c3.setText(g.getVariety());
+            TextView c4 = new TextView(this);
+            c4.setText(g.getFruit_note());
             c3.setMaxWidth(150);
             tr.setGravity(Gravity.CENTER_VERTICAL);
             tr.addView(c0);
             tr.addView(c1);
             tr.addView(c2);
             tr.addView(c3);
+            tr.addView(c4);
             String btnid = "btn"+g.getId();
             ImageButton btDel = new ImageButton(this);
             btDel.setId(g.getId());
@@ -104,11 +107,11 @@ public class OrnamentalGarden extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     mFactory.delete(g.getId());
-                    ornament.removeView(tr);
+                    fruit.removeView(tr);
                 }
             });
             tr.addView(btDel);
-            ornament.addView(tr);
+            fruit.addView(tr);
         }
     }
 }

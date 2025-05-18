@@ -16,31 +16,33 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class OrnamentalGarden_add extends AppCompatActivity {
-    Ornamental_factory mFactory;
+public class FruitGarden_add extends AppCompatActivity {
+
+    Fruit_factory mFactory;
     TextView mEditText;
     TextView mEditText2;
+    TextView mEditText3;
     TextView mType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_ornamental_garden_add);
-        mFactory=new Ornamental_factory(this);
+        setContentView(R.layout.activity_fruit_garden_add);
+        mFactory=new Fruit_factory(this);
         mEditText = (TextView) findViewById(R.id.editTextTextMultiLine4);
         mEditText2 = (TextView) findViewById(R.id.editTextTextMultiLine5);
+        mEditText3 = (TextView) findViewById(R.id.editTextTextMultiLine6);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
         Spinner spinner = findViewById(R.id.spinner);
-        String[] grdTypes = {String.valueOf(GardenEnum.TREES.getTitle()),
-                String.valueOf(GardenEnum.SHRUBS.getTitle()),
-                String.valueOf(GardenEnum.CONIFERS.getTitle()),
-                String.valueOf(GardenEnum.VINES.getTitle()),
-                String.valueOf(GardenEnum.PERENNIALS.getTitle()),
-                String.valueOf(GardenEnum.ANNUALS.getTitle()),};
+        String[] grdTypes = {String.valueOf(FruitEnum.TREES.getTitle()),
+                String.valueOf(FruitEnum.SHRUBS.getTitle()),
+                String.valueOf(FruitEnum.VEGETABLES.getTitle()),
+                String.valueOf(FruitEnum.BERRIES.getTitle()),
+                String.valueOf(FruitEnum.GREENS.getTitle()),};
         ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, grdTypes);
         // Определяем разметку для использования при выборе элемента
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -50,7 +52,7 @@ public class OrnamentalGarden_add extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(OrnamentalGarden_add.this, OrnamentalGarden.class);
+                Intent intent = new Intent(FruitGarden_add.this, FruitGarden.class);
                 startActivity(intent);
             }
         });
@@ -59,14 +61,16 @@ public class OrnamentalGarden_add extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int i=spinner.getSelectedItemPosition();
-                GardenEnum e=GardenEnum.values()[i];
-                OrnamentalGarden_record ornament = new OrnamentalGarden_record(mEditText.getText().toString(),
+                FruitEnum e=FruitEnum.values()[i];
+                FruitGarden_record fruit = new FruitGarden_record(mEditText.getText().toString(),
                         mEditText2.getText().toString(),
-                        e);
-                mFactory.add(ornament);
-                Intent intent = new Intent(OrnamentalGarden_add.this, OrnamentalGarden.class);
+                        e,
+                        mEditText3.getText().toString());
+                mFactory.add(fruit);
+                Intent intent = new Intent(FruitGarden_add.this, FruitGarden.class);
                 startActivity(intent);
             }
         });
     }
+
 }

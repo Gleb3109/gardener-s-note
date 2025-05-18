@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OrnamentalGarden_add">
-
+    tools:context=".FruitGarden_add">
     <TextView
         android:id="@+id/textView19"
         android:layout_width="69dp"
@@ -49,8 +48,8 @@
 
     <EditText
         android:id="@+id/editTextTextMultiLine4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="240dp"
+        android:layout_height="44dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
@@ -61,7 +60,8 @@
         android:id="@+id/textView16"
         android:layout_width="131dp"
         android:layout_height="46dp"
-        android:layout_marginTop="54dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="84dp"
         android:text="Информация:"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,8 +81,8 @@
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="104dp"
         android:text="Записать"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine5" />
@@ -93,6 +93,28 @@
         android:layout_height="34dp"
         android:layout_marginTop="92dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView19"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="59dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="24dp"
+        android:text="Сорт:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine6"
+        android:layout_width="284dp"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toTopOf="@+id/textView17" />
 </androidx.constraintlayout.widget.ConstraintLayout>

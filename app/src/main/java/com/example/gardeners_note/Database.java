@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class Database extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "MyDatabase13.db";
+    private static final String DATABASE_NAME = "gardens_note.db";
     private static final int DATABASE_VERSION = 1;
     public Database(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -17,6 +17,10 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL(createTableCalendar);
         String createTableWish = "CREATE TABLE IF NOT EXISTS wish_record (id INTEGER,wish_name TEXT, wish_note TEXT, PRIMARY KEY(id AUTOINCREMENT));";
         db.execSQL(createTableWish);
+        String createTableOrnamentalGarden = "CREATE TABLE IF NOT EXISTS ornamentalGarden_record (id INTEGER,ornamental_type INTEGER, ornamental_name TEXT, ornamental_note TEXT, PRIMARY KEY(id AUTOINCREMENT));";
+        db.execSQL(createTableOrnamentalGarden);
+        String createTableFruitGarden = "CREATE TABLE IF NOT EXISTS fruitGarden_record (id INTEGER, variety TEXT, fruit_name TEXT, fruit_type INTEGER, fruit_note TEXT, PRIMARY KEY(id AUTOINCREMENT));";
+        db.execSQL(createTableFruitGarden);
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
