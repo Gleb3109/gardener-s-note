@@ -88,6 +88,8 @@ public class OrnamentalGarden extends AppCompatActivity {
             c2.setText(g.getOrnamental_name());
             TextView c3 = new TextView(this);
             c3.setText(g.getOrnamental_note());
+            c2.setMaxWidth(140);
+            c1.setMaxWidth(130);
             c3.setMaxWidth(150);
             tr.setGravity(Gravity.CENTER_VERTICAL);
             tr.addView(c0);

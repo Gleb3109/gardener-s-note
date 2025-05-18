@@ -52,15 +52,15 @@ public class FruitGarden extends AppCompatActivity {
         fruit.bringToFront();
         for(int i = 0; i < 3; i++){
             TableRow tr =  new TableRow(this);
-            TextView c1 = new TextView(this);
-            c1.setText("");
+        //    TextView c1 = new TextView(this);
+        //    c1.setText("");
             TextView c2 = new TextView(this);
             c2.setText("");
             TextView c3 = new TextView(this);
             c3.setText("");
             TextView c4 = new TextView(this);
             c4.setText("");
-            tr.addView(c1);
+        //    tr.addView(c1);
             tr.addView(c2);
             tr.addView(c3);
             tr.addView(c4);
@@ -80,8 +80,8 @@ public class FruitGarden extends AppCompatActivity {
                 i=0;
                 tr.setBackgroundResource(R.color.lightblue);
             }
-            TextView c0 = new TextView(this);
-            c0.setText(" " + g.getId());
+         //   TextView c0 = new TextView(this);
+          //  c0.setText(" " + g.getId());
             TextView c1 = new TextView(this);
             c1.setText(g.getFruit_type().getTitle());
             TextView c2 = new TextView(this);
@@ -90,9 +90,12 @@ public class FruitGarden extends AppCompatActivity {
             c3.setText(g.getVariety());
             TextView c4 = new TextView(this);
             c4.setText(g.getFruit_note());
-            c4.setMaxWidth(150);
+            c4.setMaxWidth(170);
+            c3.setMaxWidth(140);
+            c2.setMaxWidth(140);
+            c1.setMaxWidth(130);
             tr.setGravity(Gravity.CENTER_VERTICAL);
-            tr.addView(c0);
+            //   tr.addView(c0);
             tr.addView(c1);
             tr.addView(c2);
             tr.addView(c3);
