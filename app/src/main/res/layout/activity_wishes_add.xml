@@ -18,8 +18,10 @@
 
     <EditText
         android:id="@+id/editTextTextMultiLine2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="188dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
@@ -28,32 +30,32 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="179dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="120dp"
+        android:layout_width="166dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="124dp"
         android:text="Название:"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="203dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="194dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
         android:text="Информация:"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
         android:id="@+id/editTextTextMultiLine3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="195dp"
+        android:layout_height="54dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
