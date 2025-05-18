@@ -90,7 +90,7 @@ public class FruitGarden extends AppCompatActivity {
             c3.setText(g.getVariety());
             TextView c4 = new TextView(this);
             c4.setText(g.getFruit_note());
-            c3.setMaxWidth(150);
+            c4.setMaxWidth(150);
             tr.setGravity(Gravity.CENTER_VERTICAL);
             tr.addView(c0);
             tr.addView(c1);

@@ -6,12 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FruitGarden_add">
+
     <TextView
         android:id="@+id/textView19"
-        android:layout_width="69dp"
-        android:layout_height="35dp"
+        android:layout_width="90dp"
+        android:layout_height="33dp"
         android:layout_marginTop="40dp"
         android:text="Тип:"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
@@ -27,10 +29,11 @@
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="113dp"
-        android:layout_height="32dp"
+        android:layout_width="214dp"
+        android:layout_height="40dp"
         android:layout_marginTop="19dp"
         android:text="Добавить"
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imageButton8"
@@ -38,11 +41,12 @@
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="102dp"
-        android:layout_height="44dp"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="96dp"
         android:text="Название:"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
@@ -59,11 +63,12 @@
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="131dp"
+        android:layout_width="172dp"
         android:layout_height="46dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="84dp"
         android:text="Информация:"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -80,10 +85,10 @@
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="104dp"
+        android:layout_width="150dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="100dp"
         android:text="Записать"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine5" />
@@ -100,11 +105,12 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="59dp"
-        android:layout_height="46dp"
+        android:layout_width="94dp"
+        android:layout_height="43dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="24dp"
         android:text="Сорт:"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />

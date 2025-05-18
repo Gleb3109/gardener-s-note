@@ -63,10 +63,11 @@
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="231dp"
-        android:layout_height="28dp"
+        android:layout_width="281dp"
+        android:layout_height="43dp"
         android:layout_marginTop="7dp"
         android:text="Лунный календарь"
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
