@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".OrnamentalGarden">
 
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ECE092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/photo_5217793856689530519_y" />
+
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="653dp"
@@ -32,7 +41,7 @@
         android:id="@+id/imageButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FBFBFB"
+        android:backgroundTint="#ECE092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/custom_back" />
@@ -53,7 +62,7 @@
         android:id="@+id/imageButton7"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:backgroundTint="#FFFFFF"
+        android:backgroundTint="#ECE092"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_add" />

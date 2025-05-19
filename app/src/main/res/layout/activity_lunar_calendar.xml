@@ -7,11 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".Lunar_calendar">
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ECE092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/photo_5217793856689530519_y" />
+
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
+        android:backgroundTint="#ECE092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/custom_back" />
@@ -86,8 +95,9 @@
         android:id="@+id/imageView5"
         android:layout_width="256dp"
         android:layout_height="224dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="88dp"
         android:layout_marginTop="24dp"
+        android:background="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:srcCompat="@drawable/_98a570e_40ff_4796_bae9_da2575000685_m" />
