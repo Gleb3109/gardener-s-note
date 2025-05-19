@@ -54,6 +54,7 @@
         android:layout_marginTop="31dp"
         android:text="Плодовые растения"
         android:textAlignment="center"
+        android:textColor="#1D0404"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

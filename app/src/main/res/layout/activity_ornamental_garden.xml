@@ -53,6 +53,7 @@
         android:layout_marginTop="4dp"
         android:text="Декоративный сад"
         android:textAlignment="center"
+        android:textColor="#1D0404"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

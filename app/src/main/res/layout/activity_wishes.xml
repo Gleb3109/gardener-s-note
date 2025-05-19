@@ -22,6 +22,7 @@
         android:layout_height="55dp"
         android:text="Мои желания"
         android:textAlignment="center"
+        android:textColor="#180404"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

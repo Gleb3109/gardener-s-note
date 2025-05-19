@@ -23,6 +23,7 @@
         android:text="Записки садовода"
         android:textAlignment="center"
         android:textAllCaps="false"
+        android:textColor="#180404"
         android:textSize="24sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/button"
@@ -36,6 +37,7 @@
         android:layout_height="53dp"
         android:backgroundTint="#6F5144"
         android:text="Календарь"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -50,6 +52,7 @@
         android:layout_marginTop="16dp"
         android:backgroundTint="#6F5144"
         android:text="Лунный календарь"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
@@ -61,6 +64,7 @@
         android:layout_marginTop="14dp"
         android:backgroundTint="#6F5144"
         android:text="Желания"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
@@ -72,6 +76,7 @@
         android:layout_marginTop="12dp"
         android:backgroundTint="#6F5144"
         android:text="Декоративный сад"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,6 +89,7 @@
         android:layout_marginTop="12dp"
         android:backgroundTint="#6F5144"
         android:text="Плодовые-огород"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button5" />

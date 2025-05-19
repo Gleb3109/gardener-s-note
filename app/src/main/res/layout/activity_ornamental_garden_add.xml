@@ -24,6 +24,7 @@
         android:layout_marginTop="36dp"
         android:text="Тип:"
         android:textAlignment="viewStart"
+        android:textColor="#1D0404"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
@@ -44,6 +45,7 @@
         android:layout_marginTop="19dp"
         android:text="Добавить"
         android:textAlignment="center"
+        android:textColor="#1D0404"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imageButton8"
@@ -57,6 +59,7 @@
         android:layout_marginTop="104dp"
         android:text="Название:"
         android:textAlignment="textStart"
+        android:textColor="#1D0404"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
@@ -69,6 +72,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:textColor="#1B0606"
         app:layout_constraintStart_toEndOf="@+id/textView15"
         app:layout_constraintTop_toTopOf="@+id/textView15" />
 
@@ -80,6 +84,7 @@
         android:layout_marginTop="48dp"
         android:text="Информация:"
         android:textAlignment="viewStart"
+        android:textColor="#1D0404"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -92,6 +97,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:textColor="#1B0606"
         app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toTopOf="@+id/textView16" />
 
@@ -103,8 +109,10 @@
         android:layout_marginTop="44dp"
         android:backgroundTint="#6F5144"
         android:text="Записать"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine5" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine5"
+        app:strokeColor="#813333" />
 
     <Spinner
         android:id="@+id/spinner"

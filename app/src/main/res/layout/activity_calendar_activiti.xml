@@ -24,6 +24,7 @@
         android:layout_marginBottom="168dp"
         android:backgroundTint="#6F5144"
         android:text="Записать"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -73,6 +74,7 @@
         android:layout_marginTop="3dp"
         android:text="Календарь"
         android:textAlignment="center"
+        android:textColor="#180404"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,6 +89,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:textColor="#1B0606"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,6 +104,7 @@
         android:layout_marginBottom="168dp"
         android:backgroundTint="#6F5144"
         android:text="Удалить"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button2" />
 
