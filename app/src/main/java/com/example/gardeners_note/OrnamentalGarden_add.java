@@ -35,6 +35,7 @@ public class OrnamentalGarden_add extends AppCompatActivity {
             return insets;
         });
         Spinner spinner = findViewById(R.id.spinner);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item,list);
         String[] grdTypes = {String.valueOf(GardenEnum.TREES.getTitle()),
                 String.valueOf(GardenEnum.SHRUBS.getTitle()),
                 String.valueOf(GardenEnum.CONIFERS.getTitle()),
