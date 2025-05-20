@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Gardeners_note"
         tools:targetApi="31">
         <activity
+            android:name=".Cad"
+            android:exported="false" />
+        <activity
             android:name=".FruitGarden_add"
             android:exported="false" />
         <activity
